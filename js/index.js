@@ -77,3 +77,19 @@ function zoom(event) {
 let scale = 1;
 const el = document.querySelector('.img-content img');
 el.onwheel = zoom;
+
+//Event 6: LOAD
+let allImg = document.querySelector('img');
+
+allImg.style.transitionDuration = "0.8s";
+window.addEventListener('load', (event) => {
+    allImg.style.transform = "rotate(360deg)"
+
+});
+
+//Event 7: DRAG   on the img-fluid rounded
+
+let dragImg = document.querySelector('.rounded');
+dragImg.addEventListener('drag', (e) => {
+    dragImg.style.borderRadius = "40%";
+}, false)
