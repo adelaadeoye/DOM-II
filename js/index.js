@@ -37,3 +37,26 @@ doubleClick.addEventListener('click', (e) => {
     document.querySelector('.intro img').src = "img/funbus2.gif"
     button.textContent = "Double Click for more fun"
 })
+
+
+//Event 4 scroll
+var isScrolling;
+
+// Listen for scroll events
+window.addEventListener('scroll', function(event) {
+    let color = document.querySelector('.home');
+    color.style.backgroundColor = "#483D8B"
+    color.style.color = "white"
+        // Clear our timeout throughout the scroll
+    window.clearTimeout(isScrolling);
+
+    // Set a timeout to run after scrolling ends
+    isScrolling = setTimeout(function() {
+
+        // Run the callback
+        let color = document.querySelector('.home');
+        color.style.backgroundColor = ""
+        color.style.color = ""
+    }, 66);
+
+}, false);
