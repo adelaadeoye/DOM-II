@@ -118,3 +118,28 @@ function reportWindowSize() {
 }
 
 window.onresize = reportWindowSize;
+
+//PROPAGATION Click on the first button for Fun in the sun div
+document.querySelector('.destination').addEventListener('click', (e) => {
+    alert("destination was click")
+})
+document.querySelector('.destination .btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    alert("button was click")
+})
+
+//STOP NAVIGATION FROM REFRESHING PAGE
+let mos = document.querySelectorAll('a');
+console.log(mos)
+mos.forEach(item => {
+    item.addEventListener('onclick', (e) => {
+        preventDefault();
+
+    });
+})
+
+//STRETCH TASK COMPLETE
+TweenMax.to('.destination', 0.5, {
+    rotationY: 180,
+    ease: Power1.easeInOut,
+});
