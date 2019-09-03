@@ -60,3 +60,20 @@ window.addEventListener('scroll', function(event) {
     }, 66);
 
 }, false);
+
+//Event 5: Wheel  Work on the Let's go image to zoom in and out
+function zoom(event) {
+    event.preventDefault();
+
+    scale += event.deltaY * -0.01;
+
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 1.2);
+
+    // Apply scale transform
+    el.style.transform = `scale(${scale})`;
+}
+
+let scale = 1;
+const el = document.querySelector('.img-content img');
+el.onwheel = zoom;
