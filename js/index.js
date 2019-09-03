@@ -93,3 +93,28 @@ let dragImg = document.querySelector('.rounded');
 dragImg.addEventListener('drag', (e) => {
     dragImg.style.borderRadius = "40%";
 }, false)
+
+
+//Event 8: DRAGEND
+
+dragImg.addEventListener('dragend', (e) => {
+    dragImg.style.borderRadius = "";
+}, false)
+
+//Event 9: ONLINE
+window.addEventListener('online', (event) => {
+    alert("You are now connected to the network.");
+});
+
+//Event 10: RESIZE
+
+let heightOutput = "";
+let widthOutput = "";
+
+function reportWindowSize() {
+    heightOutput = window.innerHeight;
+    widthOutput = window.innerWidth;
+    alert(`Window screen Height: ${heightOutput} \nWindow screen Width: ${widthOutput}`);
+}
+
+window.onresize = reportWindowSize;
